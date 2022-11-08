@@ -1,20 +1,19 @@
 package com.zc.springcloud;
 
-import com.zc.config.MyselfRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author zheng.javagodfather
- * @create 2022-11-06 21:29
+ * @create 2022-11-08 16:09
  */
 @SpringBootApplication
-@EnableEurekaClient
-//@RibbonClient(name = "CLOUD-PAYMENT-SERVICE",configuration = MyselfRule.class)
-public class OredrMain80 {
+@EnableFeignClients
+public class OrderFeignMain80 {
     public static void main(String[] args) {
-        SpringApplication.run(OredrMain80.class,args);
+        SpringApplication.run(OrderFeignMain80.class,args);
     }
 }
