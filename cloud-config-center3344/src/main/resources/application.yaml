@@ -11,8 +11,25 @@ spring:
           uri: https://github.com/javaZcMan/springcloud-config.git
           search-paths:
             - springcloud-config
-      label: master
+          default-label: main
+          username: javaZcMan
+          password: '147258mn[]'
+
+
+  #rabbitmq相关配置
+  rabbitmq:
+    host: 192.168.88.3
+    port: 5672
+    username: admin
+    password: '0000'
+
 eureka:
   client:
     service-url:
       defaultZone: http://eureka7001:7001/eureka/
+##rabbitmq相关配置,暴露bus刷新配置的端点
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
